@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+  @apply 
+    text-xl; 
+}
+button.primary {
+  @apply
+    bg-orange-500 
+    text-white 
+    font-semibold 
+    px-4 
+    py-1 
+    rounded-full;
+}
+
+button.primary:hover {
+  @apply 
+    bg-orange-700;
+}
+
+button.secondary {
+  @apply 
+    bg-transparent 
+    text-orange-700 
+    font-semibold 
+    px-4 
+    py-1 
+    border 
+    border-orange-500 
+    rounded-full;
+}
+
+button.secondary:hover {
+  @apply 
+    bg-orange-500 
+    text-white 
+    border-transparent;
+}
