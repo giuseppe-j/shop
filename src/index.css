@@ -5,12 +5,10 @@
 @tailwind utilities;
 
 h1 {
-  @apply 
-    text-xl; 
+	@apply text-xl;
 }
 button.primary {
-  @apply
-    bg-orange-500 
+	@apply bg-orange-500 
     text-white 
     font-semibold 
     px-4 
@@ -19,13 +17,11 @@ button.primary {
 }
 
 button.primary:hover {
-  @apply 
-    bg-orange-700;
+	@apply bg-orange-700;
 }
 
 button.secondary {
-  @apply 
-    bg-transparent 
+	@apply bg-transparent 
     text-orange-700 
     font-semibold 
     px-4 
@@ -36,8 +32,19 @@ button.secondary {
 }
 
 button.secondary:hover {
-  @apply 
-    bg-orange-500 
+	@apply bg-orange-500 
     text-white 
     border-transparent;
+}
+
+.sm {
+	font-size: 10px;
+}
+
+.md {
+	font-size: 14px;
+}
+
+.lg {
+	font-size: 18px;
 }
