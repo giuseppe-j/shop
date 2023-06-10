@@ -1,43 +1,22 @@
+import { useState } from 'react';
 import './App.css';
-import { Button } from './components/Button';
+import Cart from './Cart';
+import CartList from './CartList';
+import Navbar from './Navbar';
+import ProductList from './ProductList';
 
 function App() {
-	return (
-		<div className='App'>
-			<Button
-				size='sm'
-				text='Shop'
-				variant='primary'
-				onClick={() => console.log('asdasds')}
-			/>
-
-			<Button
-				text='Shop'
-				variant='primary'
-				onClick={() => console.log('asdasds')}
-			/>
-
-			<Button
-				size='lg'
-				text='Shop'
-				variant='primary'
-				onClick={() => console.log('asdasds')}
-			/>
-
-			<Button
-				text='Shop'
-				variant='secondary'
-				onClick={() => console.log('asdasds')}
-			/>
-
-			<h1 className='font-roboto'>Shop</h1>
-			<br />
-			<button className='primary'>Primary</button>
-			<br />
-			<br />
-			<button className='secondary'>Secondary</button>
-		</div>
-	);
+  const [toggleCart, setToggleCart] = useState(false);
+  return (
+    <div className='App'>
+      <Navbar toggleCart={() => setToggleCart(!toggleCart)} />
+      {toggleCart && <CartList toggleCart={() => setToggleCart(!toggleCart)} />}
+      <div className='max-w-6xl mx-auto px-4 py-10'>
+        <ProductList />
+        <Cart />
+      </div>
+    </div>
+  );
 }
 
 export default App;
