@@ -11,7 +11,7 @@ interface Cart {
     products: CartProduct[]
     addProduct: (product: CartProduct) => void
     deleteProduct: (id: string) => void
-    updateProduct: (id: string) => void
+    updateProduct: (id: string, quantity?: number) => void
     totalQuantity: number
 }
 
@@ -19,10 +19,16 @@ export const useCart = create<Cart>()((set) => ({
     products: [],
     addProduct: (product: CartProduct) => set((state) => ({ products: [...state.products, product], totalQuantity: calculateTotalQuantity([...state.products, product]) })),
     deleteProduct: (id: string) => set((state) => ({ products: state.products.filter(product => product.id !== id), totalQuantity: calculateTotalQuantity(state.products.filter(product => product.id !== id)) })),
-    updateProduct: (id: string) => set((state) => (
+    updateProduct: (id: string, quantity?: number) => set((state) => (
         {
             products: state.products.map((product) => {
-                if (product.productId === id) product.quantity += 1
+                if (product.productId === id) {
+                    if (quantity) {
+                        product.quantity = quantity
+                    } else {
+                        product.quantity += 1
+                    }
+                }
                 return product;
             }),
             totalQuantity: calculateTotalQuantity(state.products)

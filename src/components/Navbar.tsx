@@ -1,4 +1,4 @@
-import { useCart } from "./shared/cart";
+import { useCart } from "../shared/cart";
 
 type Props = {
     toggleCart: () => void
@@ -22,17 +22,19 @@ function Navbar(props: Props) {
                     </div>
                     <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                         <div className="flex flex-shrink-0 items-center">
-                            <img className="block h-8 w-auto lg:hidden" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company" />
-                            <img className="hidden h-8 w-auto lg:block" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company" />
+                            <img className="block h-8 w-auto lg:hidden" src="src/assets/images/shop-logo.png" alt="Shop" />
+                            <img className="hidden h-8 w-auto lg:block" src="src/assets/images/shop-logo.png" alt="Shop" />
                         </div>
                         <div className="hidden sm:ml-6 sm:block">
-                            <div className="flex space-x-4">
+                            <div className="flex space-x-5">
+                                <a href="#" className="text-sm md:text-base text-gray-200 hover:text-white">Home</a>
+                                <a href="#" className="text-sm md:text-base text-gray-200 hover:text-white">About</a>
                             </div>
                         </div>
                     </div>
                     <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                         <button name="Cart" className="relative w-9 h-9 bg-white bg-opacity-20 rounded text-white p-1" onClick={props.toggleCart}>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" className="h-6 w-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" className="h-6 w-7">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
                             </svg>
                             {totalQuantity > 0 && <div className="absolute rounded-full -top-2 -right-2 bg-orange-500 w-6 h-6">{totalQuantity}</div>}
@@ -42,10 +44,8 @@ function Navbar(props: Props) {
             </div>
             <div className="sm:hidden" id="mobile-menu">
                 <div className="space-y-1 px-2 pb-3 pt-2">
-                    <a href="#" className="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Dashboard</a>
-                    <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Team</a>
-                    <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projects</a>
-                    <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
+                    <a href="#" className="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Home</a>
+                    <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">About</a>
                 </div>
             </div>
         </nav>
