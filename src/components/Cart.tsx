@@ -25,7 +25,7 @@ function Cart(props: Props) {
                                             <span className="sr-only">Close panel</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                                                 viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" className="h-6 w-7">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12">
                                                 </path>
                                             </svg>
                                         </button>

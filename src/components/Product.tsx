@@ -23,7 +23,7 @@ function Product(props: Product) {
         })
     }
     return (
-        <div key={props.id} className="w-full mx-5 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div key={props.id} className=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <div className="max-w-sm bg-white bg-cover bg-no-repeat bg-center p-20" style={{ backgroundImage: `url(${props.image})` }}></div>
             <div className="px-5 pb-5">
                 <a href="#">
